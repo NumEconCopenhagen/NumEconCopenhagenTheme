@@ -9,10 +9,9 @@
         "name": "Jakob Jul Elben"
     },
     "scripts": {
-        "production": "export tdir=$(python -c \"import os; print(os.path.dirname(os.getcwd()))\")",
         "build": "npm run webpack; npm run hugo",
-        "hugo": "$(npm bin)/hugo --themesDir=$tdir --config='exampleSite/config.yml' --contentDir='exampleSite/content'",
-        "hugo-serve": "$(npm bin)/hugo serve --themesDir=$tdir --config='exampleSite/config.yml' --contentDir='exampleSite/content'",
+        "hugo": "$(npm bin)/hugo --source='exampleSite' --themesDir='../..'",
+        "hugo-serve": "$(npm bin)/hugo --source='exampleSite' --themesDir='../..'",
         "webpack": "webpack",
         "webpack-watch": "webpack --watch",
         "watch": "npm run hugo-serve & npm run webpack-watch"
