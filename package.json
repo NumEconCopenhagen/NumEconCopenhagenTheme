@@ -1,0 +1,21 @@
+{
+    "name": "NumEconCopenhagenTheme",
+    "description": "A hugo theme for course site",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/NumEconCopenhagen/NumEconCopenhagenTheme.git"
+    },
+    "author": {
+        "name": "Jakob Jul Elben"
+    },
+    "scripts": {
+        "build": "npm run hugo",
+        "hugo": "cd exampleSite; $(npm bin)/hugo --themesDir=../..",
+        "hugo-serve": "cd exampleSite; hugo server --themesDir=../..",
+        "watch": "npm run hugo-serve"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "hugo-bin": "^0.37.0"
+    }
+}

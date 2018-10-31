@@ -1,0 +1,13 @@
+name = "Minimo"
+license = "MIT"
+licenselink = "https://github.com/numeconcopenhagen/numeconcopenhagentheme/blob/master/LICENSE"
+description = "Minimal course theme for Hugo"
+homepage = "https://numeconcopenhagen.netlify.com"
+tags = [
+  "blog",
+  "minimal"
+]
+min_version = 0.45
+
+[author]
+  name = "Jakob Jul Elben"
