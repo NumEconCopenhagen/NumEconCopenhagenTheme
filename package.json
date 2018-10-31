@@ -9,16 +9,25 @@
         "name": "Jakob Jul Elben"
     },
     "scripts": {
-        "build": "npm run hugo",
+        "build": "npm run webpack; npm run hugo",
         "hugo": "cd exampleSite; $(npm bin)/hugo --themesDir=../..",
         "hugo-serve": "cd exampleSite; hugo server --themesDir=../..",
-        "watch": "npm run hugo-serve"
+        "webpack": "webpack",
+        "webpack-watch": "webpack --watch",
+        "watch": "npm run hugo-serve & npm run webpack-watch"
     },
     "license": "MIT",
     "dependencies": {
         "hugo-bin": "^0.37.0"
     },
     "devDependencies": {
+        "clean-webpack-plugin": "^0.1.19",
+        "css-loader": "^1.0.1",
+        "extract-loader": "^3.0.0",
+        "file-loader": "^2.0.0",
+        "node-sass": "^4.9.4",
+        "optimize-css-assets-webpack-plugin": "^5.0.1",
+        "sass-loader": "^7.1.0",
         "webpack": "^4.23.1",
         "webpack-cli": "^3.1.2"
     }
