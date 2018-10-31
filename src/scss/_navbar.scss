@@ -1,0 +1,57 @@
+#primeAside {
+    width: 25rem;
+    min-height: 100vh;
+    background-color: aqua;
+    padding: 2rem 2rem;
+    position: fixed;
+    background-color: #901A1E;
+    color: #ffffff;
+    .asideHeader {
+        a {
+            &:visited, &:hover, &:active {
+                color: inherit;
+                text-decoration: none !important;
+            }
+            h1 {
+                font-size: 3.5rem;
+                font-family: 'VT323', monospace;
+                text-transform: uppercase;
+            }
+        }
+        p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 600;
+        }
+    }
+    nav {
+        hr {
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        display: block;
+        .btn-group {
+            margin-bottom: 1rem;
+            a {
+                font-size: 1.2rem;
+            }
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+            font-size: 1.5rem;
+            li a {
+                color: white;
+            }
+        }
+        p {
+            color: rgba(255, 255, 255, 0.5);
+            display: flex;
+        }
+    }
+    .copyright {
+        margin: 0 auto;
+        bottom:0;
+        position: absolute;
+        
+    }
+}

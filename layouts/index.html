@@ -1,14 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href={{ "/css/main.css"  | relURL }}>
-</head>
-<body>
-    PLACEHOLDER
-    <script src={{ "/js/main.js" | relURL }}></script>
-</body>
-</html>
+{{ $.Scratch.Set "max" 0 }}
+{{ range .Site.Sections }}
+    {{ $week := int (replaceRE "week" "" (index (findRE "^week[0-9]*" .Dir) 0))}}
+    {{ if gt $week ($.Scratch.Get "max") }}
+        {{ $.Scratch.Set "max" $week }}
+    {{ end }}
+{{ end }}
+{{ $week := print "week" ($.Scratch.Get "max")}}
+
+{{ partial "header.html" . }}
+<h1 class="header">{{ .Title }}</h1>
+    <hr>
+
+    <div class="main-content">
+            {{ .Content }}
+    </div>
+    {{.Section}}
+{{ partial "footer.html" . }}

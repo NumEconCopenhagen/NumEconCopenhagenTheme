@@ -1,0 +1,8 @@
+{{ partial "header.html" . }}
+    <h1 class="header">{{ if .Title}} {{ print "Week " (index (findRE "[0-9]+" .Dir) 0) " - " .Title }} {{ else }} {{print "Week " (index (findRE "[0-9]+" .Dir) 0)}}{{ end }}</h1>
+    <hr>
+
+    <div class="main-content">
+        {{ .Content }}
+    </div>
+{{ partial "footer.html" . }}

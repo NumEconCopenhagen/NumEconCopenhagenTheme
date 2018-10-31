@@ -1,3 +1,13 @@
 baseURL: "http://www.example.com"
 title: "NumEconCopenhagen"
 theme: "NumEconCopenhagenTheme"
+
+menu:
+  menu1:
+    - name: "Kunet"
+      url: "https://google.dk"
+  menu2:
+    - name: "Absalon"
+      url: "/"
+
+ignorefiles: []
