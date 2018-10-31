@@ -10,8 +10,8 @@
     },
     "scripts": {
         "build": "npm run webpack; npm run hugo",
-        "hugo": "cd exampleSite; $(npm bin)/hugo --themesDir=../..",
-        "hugo-serve": "cd exampleSite; hugo server --themesDir=../..",
+        "hugo": "$(npm bin)/hugo --themesDir='..' --config='exampleSite/config.yml' --contentDir='exampleSite/content'",
+        "hugo-serve": "$(npm bin)/hugo serve --themesDir='..' --config='exampleSite/config.yml' --contentDir='exampleSite/content'",
         "webpack": "webpack",
         "webpack-watch": "webpack --watch",
         "watch": "npm run hugo-serve & npm run webpack-watch"
