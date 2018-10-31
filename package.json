@@ -12,6 +12,7 @@
         "build": "npm run webpack; npm run hugo",
         "hugo": "$(npm bin)/hugo --source='exampleSite' --themesDir='../..'",
         "hugo-serve": "$(npm bin)/hugo --source='exampleSite' --themesDir='../..'",
+        "netlify": "ln -s ${PWD} ../NumEconCopenhagenTheme; npm install; npm run build",
         "webpack": "webpack",
         "webpack-watch": "webpack --watch",
         "watch": "npm run hugo-serve & npm run webpack-watch"
