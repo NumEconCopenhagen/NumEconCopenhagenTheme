@@ -7,7 +7,6 @@ tags = [
   "blog",
   "minimal"
 ]
-min_version = 0.45
 
 [author]
   name = "Jakob Jul Elben"
