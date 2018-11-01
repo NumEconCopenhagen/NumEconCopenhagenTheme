@@ -1,8 +1,8 @@
 {{ $.Scratch.Set "name" "Welcome" }}
 {{ $.Scratch.Set "url" "/" }}
 {{ if .Section }}
-    {{ $.Scratch.Set "name" (print "Week " (index (findRE "[0-9]+" .Section) 0)) }}
-    {{ $.Scratch.Set "url" (print "/" .Section) }}
+{{ $.Scratch.Set "name" (print "Week " (index (findRE "[0-9]+" .Section) 0)) }}
+{{ $.Scratch.Set "url" (print "/" .Section) }}
 {{ end }}
 <!DOCTYPE html>
 <html>
@@ -13,33 +13,32 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href={{ "/css/main.css"  | relURL }}>
+    <link rel="stylesheet" type="text/css" href={{ "/css/main2.css"  | relURL }}>
 </head>
 
 <body>
-    <aside id="primeAside">
-        <div class="asideHeader">
-            <a href={{ "/" | relURL }}>
-                <h1>This is ITPANA<sup>*</sup></h1>
-            </a>
-            <p>University of Copenhagen<br>Spring 2019</p>
-        </div>
-        <nav id="primeNav" class="navbar navbar-expand-lg">
-            <div class="btn-group dropright">
-                <a class="btn btn-sm btn-outline-light"
-                    role="button">{{$.Scratch.Get "name"}}</a>
-                <button aria-expanded="true" aria-haspopup="true" class="btn btn-sm btn-outline-light dropdown-toggle dropdown-toggle-split"
-                    data-toggle="dropdown" type="button">
-                    <span class="sr-only">Toggle Dropdown</span>
-                </button>
-                <div class="dropdown-menu" x-placement="top-start">
-                    {{ range .Site.Sections.Reverse }}
-                    <a class="dropdown-item" href="{{ print "/" (index (findRE "week[0-9]+" .Dir) 0) }}">{{ print "Week " (index (findRE "[0-9]+" .Dir) 0) }}</a>
-                    {{ end }}
-                    <a class="dropdown-item" href="/">Welcome</a>
-                </div>
+    <div class="wrapper">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <a href="/"><h1>This is ITPANA<sup>*</sup></h1></a>
+                <p>University of Copenhagen<br>Spring 2019</p>
             </div>
-            <hr>
-            {{ range .Site.Menus }}
+            <div class="btn-group dropright">
+                    <a class="btn btn-sm btn-outline-light"
+                        role="button" href="{{$.Scratch.Get "url"}}" >{{$.Scratch.Get "name"}}</a>
+                    <button aria-expanded="true" aria-haspopup="true" class="btn btn-sm btn-outline-light dropdown-toggle dropdown-toggle-split"
+                        data-toggle="dropdown" type="button">
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <div class="dropdown-menu" x-placement="top-start">
+                        {{ range .Site.Sections.Reverse }}
+                        <a class="dropdown-item" href="{{ print "/" .Dir }}">{{print "Week " (index (findRE "[0-9]+" .Dir) 0)}}</a>
+                        {{ end }}
+                        <a class="dropdown-item" href="/">Welcome</a>
+                    </div>
+                </div>
+                <hr>
+                {{ range .Site.Menus }}
             <ul>
                 {{ range . }}
                 <li><a href="{{ .URL }}">{{ .Name }}</a></li>
@@ -47,10 +46,10 @@
             </ul>
             <hr>
             {{ end }}
-        </nav>
-        <div class="copyright">
-                <p style="color:#ffffff;margin-bottom:0;">* Introducion to programming and numerical analysis</p>
-                <p>Made by Jakob Jul Elben</p>
+            <div class="copyright">
+                <p>*</p>
+                    <p style="color: rgba(255, 255, 255, 0.5);">made by Jakob Jul Elben</p>
                 </div>
-    </aside>
-    <main class="markdown-body">
+        </nav>
+        <div class="content-container">
+            <div class="content">

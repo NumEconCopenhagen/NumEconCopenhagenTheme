@@ -8,11 +8,7 @@
 {{ $week := print "week" ($.Scratch.Get "max")}}
 
 {{ partial "header.html" . }}
-<h1 class="header">{{ .Title }}</h1>
-    <hr>
-
-    <div class="main-content">
-            {{ .Content }}
-    </div>
-    {{.Section}}
+<h1>{{ .Title }}</h1>
+<hr>
+{{ .Content }}
 {{ partial "footer.html" . }}
