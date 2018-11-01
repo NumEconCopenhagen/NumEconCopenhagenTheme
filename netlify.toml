@@ -1,3 +1,12 @@
 [build]
   publish = "exampleSite/public"
   command = "npm run netlify"
+
+[context.production]
+command = "npm run netlify"
+
+[context.branch-deploy]
+command = "npm run netlify"
+
+[context.deploy-preview]
+command = "npm run netlify"
