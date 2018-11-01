@@ -1,29 +1,67 @@
-@import url(https://fonts.googleapis.com/css?family=Karla);@import url(https://fonts.googleapis.com/css?family=VT323);main {
-  margin-left: 25rem;
-  padding: 4rem 2rem; }
-  main h1 {
-    font-weight: bold;
-    padding-bottom: 1rem; }
-  main h1.header {
-    font-weight: bold;
-    font-size: 3rem; }
-  main a {
+@import url(https://fonts.googleapis.com/css?family=Karla);@import url(https://fonts.googleapis.com/css?family=VT323);.wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch; }
+
+#sidebar {
+  color: white;
+  display: none;
+  padding-left: 0;
+  font-size: 1.8rem; }
+  #sidebar .sidebar-header {
+    margin-top: 2rem;
+    margin-bottom: 2rem; }
+    #sidebar .sidebar-header p {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 1.5rem; }
+    #sidebar .sidebar-header h1 {
+      font-size: 3.2rem;
+      font-weight: bold;
+      font-family: "VT323";
+      text-transform: uppercase; }
+  #sidebar a {
+    color: white;
+    text-decoration: none; }
+  #sidebar a.btn {
+    font-size: 1.3rem; }
+  #sidebar .btn-group {
+    font-size: 1.3rem;
+    margin-bottom: 1rem; }
+  #sidebar .btn-group a.dropdown-item {
+    font-size: 1.3rem;
     color: #901A1E; }
-    main a:visited, main a:hover, main a:active {
-      color: #901A1E; }
-  main .main-content {
-    margin-left: 2rem; }
-    main .main-content .highlight {
-      margin-left: auto;
-      margin-right: auto;
-      display: block;
-      width: 50rem;
-      margin-bottom: 1rem; }
-    main .main-content code {
-      display: block;
-      margin: 20px 10px 20px 10px; }
-    main .main-content pre {
-      margin: 0; }
+  #sidebar ul {
+    list-style: none;
+    padding-left: 1rem; }
+  #sidebar .copyright {
+    bottom: 0;
+    position: absolute;
+    font-size: 1rem; }
+
+@media (min-height: 460px) and (min-width: 768px) {
+  #sidebar {
+    display: block;
+    position: fixed;
+    height: 100vh;
+    min-width: 25rem;
+    max-width: 25rem;
+    background-color: #901A1E;
+    padding: 1rem 2rem; }
+  .content-container {
+    padding-left: 25rem; } }
+
+.content-container .content {
+  padding: 2rem 3rem 3rem 2rem;
+  width: 65vw; }
+
+.content {
+  overflow: auto; }
+  .content .highlight {
+    width: 45vw;
+    margin-left: auto;
+    margin-right: auto; }
+  .content .highlight div {
+    padding: 1rem 1rem 1rem 1rem; }
 
 #primeAside {
   width: 25rem;
@@ -10337,5 +10375,5 @@ readers do not read off random characters that represent icons */
   font-family: 'Font Awesome 5 Free';
   font-weight: 900; }
 
-h1, h2, h3, h4, h5, h6, p {
+* {
   font-family: 'Karla', sans-serif; }
