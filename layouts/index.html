@@ -1,8 +1,10 @@
 {{ $.Scratch.Set "max" 0 }}
 {{ range .Site.Sections }}
-    {{ $week := int (replaceRE "week" "" (index (findRE "^week[0-9]*" .Dir) 0))}}
-    {{ if gt $week ($.Scratch.Get "max") }}
-        {{ $.Scratch.Set "max" $week }}
+    {{ if (findRE "^week" .Dir)}}
+        {{ $week := int (replaceRE "week" "" (index (findRE "^week[0-9]*" .Dir) 0))}}
+        {{ if gt $week ($.Scratch.Get "max") }}
+            {{ $.Scratch.Set "max" $week }}
+        {{ end }}
     {{ end }}
 {{ end }}
 {{ $week := print "week" ($.Scratch.Get "max")}}
@@ -11,4 +13,6 @@
 <h1>{{ .Title }}</h1>
 <hr>
 {{ .Content }}
+
+
 {{ partial "footer.html" . }}
