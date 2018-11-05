@@ -6,7 +6,7 @@
         {{ .Content }}
         <hr>
     {{ end }}
-    {{ range where .Pages "Section" .Type }}
+    {{ range where .Pages "Section" .Type}}
     <li><a href="{{ .URL }}">{{ .Title }}</a></li>
     {{ end }}
     </div>

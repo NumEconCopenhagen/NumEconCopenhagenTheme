@@ -1,5 +1,5 @@
 ---
-title: "Lectures"
+title: "Exercises"
 ---
 
 

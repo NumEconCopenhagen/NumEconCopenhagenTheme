@@ -1,0 +1,45 @@
+.md-cell {
+    margin-left: 7.5%;
+    height: 100%;
+    h1 {
+            border-bottom:1px solid #CCC;
+            width:100%;
+            padding-bottom:1rem;
+            margin-bottom: 1rem;
+        }
+    margin-bottom: 2rem;
+}
+
+.code-cell {
+    margin-top: 2rem;
+    margin-left: 0!important;
+    margin-right: 0!important;
+    display: flex;
+    .code-cell-count {
+        width: 7.5%;
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: auto;
+        font-size: 87.5%;
+        color: #901A1E;
+    }
+    .code-cell-input {
+        width: 92.5%;
+    }
+    .highlight {
+        width: 100%;
+    }
+}
+
+.code-output {
+    margin-left: 7.5%;
+    pre {
+        margin-bottom: 0;
+    }
+    margin-bottom: 1.5rem;
+    .png-container {
+        float: none;
+        margin: 0 auto;
+    }
+
+}

@@ -10,7 +10,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>{{ .Site.Title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href={{ "/css/main.css"  | relURL }}>
     <link rel="stylesheet" type="text/css" href={{ "/css/main2.css"  | relURL }}>
@@ -20,7 +20,7 @@
     <div class="wrapper">
         <nav id="sidebar">
             <div class="sidebar-header">
-                <a href="/"><h1>This is ITPANA<sup>*</sup></h1></a>
+                <a href="/"><h1>{{ .Site.Title }}<sup>*</sup></h1></a>
                 <p>University of Copenhagen<br>Spring 2019</p>
             </div>
             <div class="btn-group dropright">

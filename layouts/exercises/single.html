@@ -13,9 +13,9 @@
                 {{ $scratch.Set "math" false }}
                 {{ range $cell_line := $cell.source }}
                     {{ if (findRE "\\$\\$" $cell_line) }}
-                    {{ if (findRE "\\$\\$.*\\$\\$" $cell_line) }}
+                        {{ if (findRE "\\$\\$.*\\$\\$" $cell_line) }}
                             {{ $scratch.Add "output" ( print "<div>" $cell_line "</div>\n") }}
-                        {{ else if ($scratch.Get "math" )}}
+                        {{ else if ($scratch.Get "math")}}
                             {{ $scratch.Set "math" false }}
                             {{ $scratch.Add "output" ( print $cell_line "</div>") }}
                         {{ else }}

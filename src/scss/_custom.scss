@@ -49,25 +49,43 @@
     }
 }
 
-@media (min-height: 460px) and (min-width: 768px) {
+#sidebar {
+    position: fixed;
+    height: 100vh;
+    min-width: 25rem;
+    max-width: 25rem;
+    background-color: #901A1E;
+    padding: 1rem 2rem;
+}
+
+// @media (max-height: 588px) @or (max-width: 1198px) {
+//     #sidebar {
+//         display: block;
+//     }
+//     .content-container {
+//         padding-left: 25rem;
+//     }
+
+//     .content-container .content {
+//         padding: 2rem 3rem 3rem 5rem;
+//         width: 65vw;
+//     }
+// }
+
+@media (min-height: 588px) and (min-width: 1198px) {
     #sidebar {
         display: block;
-        position: fixed;
-        height: 100vh;
-        min-width: 25rem;
-        max-width: 25rem;
-        background-color: #901A1E;
-        padding: 1rem 2rem;
     }
     .content-container {
         padding-left: 25rem;
     }
+
+    .content-container .content {
+        padding: 2rem 3rem 3rem 5rem;
+        width: 65vw;
+    }
 }
 
-.content-container .content {
-    padding: 2rem 3rem 3rem 5rem;
-    width: 65vw;
-}
 
 .content {
     overflow: auto;
