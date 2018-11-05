@@ -51,7 +51,7 @@
     padding-left: 25rem; } }
 
 .content-container .content {
-  padding: 2rem 3rem 3rem 2rem;
+  padding: 2rem 3rem 3rem 5rem;
   width: 65vw; }
 
 .content {
@@ -59,7 +59,8 @@
   .content .highlight {
     width: 45vw;
     margin-left: auto;
-    margin-right: auto; }
+    margin-right: auto;
+    margin-bottom: 1rem; }
   .content .highlight div {
     padding: 1rem 1rem 1rem 1rem; }
 
@@ -10377,3 +10378,9 @@ readers do not read off random characters that represent icons */
 
 * {
   font-family: 'Karla', sans-serif; }
+
+a {
+  color: #901A1E; }
+  a:hover {
+    color: #901A1E;
+    text-decoration: none; }

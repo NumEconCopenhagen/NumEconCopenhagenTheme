@@ -1,6 +1,6 @@
 {{ $.Scratch.Set "name" "Welcome" }}
 {{ $.Scratch.Set "url" "/" }}
-{{ if .Section }}
+{{ if (findRE "^week" .Dir) }}
 {{ $.Scratch.Set "name" (print "Week " (index (findRE "[0-9]+" .Section) 0)) }}
 {{ $.Scratch.Set "url" (print "/" .Section) }}
 {{ end }}
@@ -32,7 +32,9 @@
                     </button>
                     <div class="dropdown-menu" x-placement="top-start">
                         {{ range .Site.Sections.Reverse }}
+                        {{ if (findRE "^week" .Dir)}}
                         <a class="dropdown-item" href="{{ print "/" .Dir }}">{{print "Week " (index (findRE "[0-9]+" .Dir) 0)}}</a>
+                        {{ end }}
                         {{ end }}
                         <a class="dropdown-item" href="/">Welcome</a>
                     </div>

@@ -1,3 +1,11 @@
 * {
     font-family: 'Karla', sans-serif;
 }
+
+a {
+    color: #901A1E;
+    &:hover {
+        color: #901A1E;
+        text-decoration: none;
+    }
+}

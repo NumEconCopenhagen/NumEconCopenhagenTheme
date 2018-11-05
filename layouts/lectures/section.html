@@ -1,0 +1,14 @@
+{{ partial "header.html" . }}
+    <h1 class="header">{{ .Title }}</h1>
+    <hr>
+    {{ if .Content }}
+    <div class="main-content">
+        {{ .Content }}
+        <hr>
+    {{ end }}
+    {{ range where .Pages "Section" "lectures"}}
+    <li><a href="{{ .URL }}">{{ .Title }}</a></li>
+    {{ end }}
+    </div>
+    
+{{ partial "footer.html" . }}
