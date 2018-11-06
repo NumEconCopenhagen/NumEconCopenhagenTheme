@@ -20,18 +20,24 @@ Troianae colunt Iphide.
 
 
 
-{{< highlight go "linenos=table" >}}
-var gui_prebinding_boot = matrix(clip_archive_fios.imOspf.pointSimplex(
-        analyst, domain, 3), ad_dimm_emulation);
-if (5) {
-    frozen_lossless.cisc /= minimize;
-} else {
-    gateway = volume_thin;
-    programming.osiTask += framework;
-}
-var systemDhcpNvram = 4;
-hard -= fileSpeed.freeware(powerpoint(character_ole_data), iso_mebibyte) +
-        case_docking.state(hardTypeWindows + ugc, 63 / 5, cybercrime);
+{{< highlight python "linenos=table" >}}
+import os
+cur_path = os.getcwd()
+ignore_set = set(["__init__.py", "count_sourcelines.py"])
+
+loclist = []
+
+for pydir, _, pyfiles in os.walk(cur_path):
+    for pyfile in pyfiles:
+        if pyfile.endswith(".py") and pyfile not in ignore_set:
+            totalpath = os.path.join(pydir, pyfile)
+            loclist.append( ( len(open(totalpath, "r").read().splitlines()),
+                               totalpath.split(cur_path)[1]) )
+
+for linenumbercount, filename in loclist: 
+    print "%05d lines in %s" % (linenumbercount, filename)
+
+print "\nTotal: %s lines (%s)" %(sum([x[0] for x in loclist]), cur_path)
 {{< / highlight >}}
 
 

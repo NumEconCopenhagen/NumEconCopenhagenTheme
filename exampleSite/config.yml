@@ -1,13 +1,19 @@
 baseURL: "http://www.example.com"
-title: "NumEconCopenhagen"
+title: "This is ITPANA"
 theme: "NumEconCopenhagenTheme"
 
 menu:
   menu1:
-    - name: "Kunet"
-      url: "https://google.dk"
+    - name: "Exercises"
+      url: "/exercises/"
+      weight: 10
+    - name: "Lectures"
+      url: "/lectures/"
+      weight: 20
   menu2:
-    - name: "Absalon"
-      url: "/"
+    - name: "Google"
+      url: "https://google.com/"
 
 ignorefiles: []
+
+pygmentsuseclasses: true

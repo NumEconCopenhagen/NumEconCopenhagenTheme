@@ -9,16 +9,16 @@
         <hr>
 
         {{ end }}
-        {{ if (findRE "\\.ipynb$" .Params.github_url) }}
+
         {{ range $cell := (getJSON .Params.github_url).cells }}
             {{ if eq $cell.cell_type "markdown" }}
                 {{ $scratch.Set "output" "" }}
                 {{ $scratch.Set "math" false }}
                 {{ range $cell_line := $cell.source }}
                     {{ if (findRE "\\$\\$" $cell_line) }}
-                    {{ if (findRE "\\$\\$.*\\$\\$" $cell_line) }}
+                        {{ if (findRE "\\$\\$.*\\$\\$" $cell_line) }}
                             {{ $scratch.Add "output" ( print "<div>" $cell_line "</div>\n") }}
-                        {{ else if ($scratch.Get "math" )}}
+                        {{ else if ($scratch.Get "math")}}
                             {{ $scratch.Set "math" false }}
                             {{ $scratch.Add "output" ( print $cell_line "</div>") }}
                         {{ else }}
@@ -63,11 +63,6 @@
                     {{ end }}
                 {{ end }}
             {{ end }}
-        {{ end }}
-        {{ else if (findRE "\\.pdf$" .Params.github_url) }}
-        <div style="height:70vh;">
-                <object data="{{ .Params.github_url }}" type="application/pdf" width="100%" height="100%"></object>
-        </div>
         {{ end }}
 
     </div>
