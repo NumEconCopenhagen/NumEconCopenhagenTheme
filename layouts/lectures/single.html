@@ -65,7 +65,7 @@
             {{ end }}
         {{ end }}
         {{ else if (findRE "\\.pdf$" .Params.github_url) }}
-        <div style="height:70vh;background-color: red;">
+        <div style="height:70vh;">
                 <object data="{{ .Params.github_url }}" type="application/pdf" width="100%" height="100%"></object>
         </div>
         {{ end }}
