@@ -3,11 +3,14 @@
     <h1 class="header">{{ .Title }}</h1>
     <hr>
 
+    {{ if .Content }}
     <div class="main-content">
         {{ .Content }}
         <hr>
 
-        {{ range $cell := (getJSON .Params.ipynb_url).cells }}
+        {{ end }}
+
+        {{ range $cell := (getJSON .Params.github_url).cells }}
             {{ if eq $cell.cell_type "markdown" }}
                 {{ $scratch.Set "output" "" }}
                 {{ $scratch.Set "math" false }}
