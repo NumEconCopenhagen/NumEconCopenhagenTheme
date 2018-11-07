@@ -33,7 +33,7 @@
                     <div class="dropdown-menu" x-placement="top-start">
                         {{ range .Site.Sections.Reverse }}
                         {{ if (findRE "^week" .Dir)}}
-                        <a class="dropdown-item" href="{{ print "/" .Dir }}">{{print "Week " (index (findRE "[0-9]+" .Dir) 0)}}</a>
+                        <a class="dropdown-item" href="{{ print "/" (replace .Dir "\\" "/") }}">{{print "Week " (index (findRE "[0-9]+" .Dir) 0)}}</a>
                         {{ end }}
                         {{ end }}
                         <a class="dropdown-item" href="/">Welcome</a>
@@ -48,9 +48,8 @@
             </ul>
             <hr>
             {{ end }}
-            <div class="copyright">
-                <p>*</p>
-                    <p style="color: rgba(255, 255, 255, 0.5);">made by Jakob Jul Elben</p>
+            <div class="copyright" style="color: rgba(255, 255, 255, 0.5);">
+                    <p>made by <a href="https://dk.linkedin.com/in/jakobjulelben">Jakob Jul Elben</a></p>
                 </div>
         </nav>
         <div class="content-container">

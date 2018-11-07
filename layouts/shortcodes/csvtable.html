@@ -1,0 +1,22 @@
+{{ $csv := getCSV "," ( .Get "src") }}
+
+<table class="table">
+  {{ range $i, $v := (first 1 $csv) }}
+    <thead>
+        <tr>
+          {{ range seq ( $.Get "col_start" | int) ( $.Get "col_end" | int) }}
+            <th>{{ index $v . }}</th>
+          {{ end }}
+        </tr>
+    </thead>
+  {{ end }}
+  <tbody>
+      {{ range $i, $v := (after 1 $csv) }}
+          <tr>
+            {{ range seq ( $.Get "col_start" | int) ( $.Get "col_end" | int) }}
+              <td>{{ index $v . }}</td>
+            {{ end }}
+          </tr>
+      {{ end }}
+  </tbody>
+</table>
