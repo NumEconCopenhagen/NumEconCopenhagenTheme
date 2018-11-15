@@ -1,6 +1,6 @@
 ---
-title: "Lecture 2"
+title: "Solution 1"
 github_url: "https://raw.githubusercontent.com/NumEconCopenhagen/lectures-2019/master/02/Primitives.ipynb"
-weight: 20
+weight: 11
 ---
-Welcome to these slides
+Welcome to the solution

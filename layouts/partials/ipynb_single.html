@@ -1,0 +1,55 @@
+{{ $scratch := newScratch }}
+{{ partial "header.html" . }}
+    <h1 class="header">{{ .Title }}</h1>
+    <hr>
+
+    <div class="main-content">
+        {{ if .Content }}
+        {{ .Content }}
+        <hr>
+        {{ end }}
+        {{ if (findRE "\\.ipynb$" .Params.github_url) }}
+        {{ range $cell := (getJSON .Params.github_url).cells }}
+            {{ if eq $cell.cell_type "markdown" }}
+            <div class="md-cell">
+                    {{ (replace (replace (replace (replace (delimit $cell.source "") "\\\\[" "<div>\\[") "\\\\]" "\\]</div>") "\\\\(" "`\\(") "\\\\)" "\\)`") | markdownify }}
+            </div>
+            {{ else if (eq $cell.cell_type "code") }}
+                {{ $scratch.Set "output" "" }}
+                {{ range $cell_line := $cell.source }}
+                    {{ $scratch.Add "output" (print $cell_line) }}
+                {{ end }}
+                <div class="code-cell">
+                    <div class="code-cell-count align-middle">
+                        {{ if $cell.execution_count }}
+                        In [{{ $cell.execution_count }}]:
+                        {{ end }}
+                    </div>
+                    <div class="code-cell-input">
+                    {{ highlight ($scratch.Get "output") "python" "linenos=table" }}
+                    </div>
+                </div>
+                {{ if $cell.outputs }}
+                    {{ range $cell_output := $cell.outputs }}
+                    <div class="code-output">
+                        {{ if eq $cell_output.output_type "stream" }}
+                            {{ range $cell_line := $cell_output.text }}
+                            <pre>{{ replace $cell_line "\n" "" | safeHTML}}</pre>
+                            {{ end }}
+                        {{ else if (and (eq $cell_output.output_type "display_data") (isset $cell_output.data "image/png"))  }}
+                        <div class="png-container row justify-content-center">
+                        <img src="data:image/png;base64,{{ index $cell_output.data "image/png" }}" />
+                        </div>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+        {{ end }}
+        {{ else if (findRE "\\.pdf$" .Params.github_url) }}
+        <div style="height:70vh;">
+                <object data="{{ .Params.github_url }}" type="application/pdf" width="100%" height="100%"></object>
+        </div>
+    </div>
+    {{ end }}
+{{ partial "footer.html" . }}
