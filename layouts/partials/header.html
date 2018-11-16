@@ -16,12 +16,17 @@
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="container-fluid p-0">
         <nav id="sidebar">
             <div class="sidebar-header">
                 <a href="/"><h1>{{ .Site.Title }}<sup>*</sup></h1></a>
                 <p>University of Copenhagen<br>Spring 2019</p>
+                <button class="navbar-toggle transparent" data-toggle="collapse" href="#collapser" role="button" aria-expanded="false" aria-controls="collapser">
+
+                    <span class="fas fa-bars text-white"></span> <!-- using a <span> element to reference the icon -->
+                    </button>
             </div>
+            <div id="collapser" class="collapse h-100">
             <div class="btn-group dropright">
                     <a class="btn btn-sm btn-outline-light"
                         role="button" href="{{$.Scratch.Get "url"}}" >{{$.Scratch.Get "name"}}</a>
@@ -47,9 +52,10 @@
             </ul>
             <hr>
             {{ end }}
-            <div class="copyright" style="color: rgba(255, 255, 255, 0.5);">
+            <div class="copyright mt-auto" style="color: rgba(255, 255, 255, 0.5);">
                     <p>made by <a href="https://dk.linkedin.com/in/jakobjulelben">Jakob Jul Elben</a></p>
                 </div>
+            </div>
         </nav>
         <div class="content-container">
             <div class="content">

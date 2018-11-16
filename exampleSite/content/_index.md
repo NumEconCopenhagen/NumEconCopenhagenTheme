@@ -4,6 +4,9 @@ title: "Welcome"
 
 # Quam Adoni urbes Aetnam rex et pati
 
+  
+* New window: <kbd>Ctrl</kbd>+<kbd>N</kbd>
+
 ## Campos ad stipite fallit coeptus insons precor
 
 Lorem markdownum sepulcrum satiata me transire patuit. Quid non a exploratis

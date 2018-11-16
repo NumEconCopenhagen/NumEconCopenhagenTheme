@@ -1,102 +1,39 @@
-.wrapper {
-    display: flex;
-    width: 100%;
-    align-items: stretch;
-}
-
-#sidebar {
-    color: white;
-    display: none;
-    padding-left: 0;
-    font-size: 1.8rem;
-    .sidebar-header {
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-        p {
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 1.5rem;
+.content-container {
+    .content {
+        padding: 2rem 3rem 3rem 5rem;
+        width: 100%;
+        .highlight {
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 1rem;
         }
-        h1 {
-            font-size: 3.2rem;
-            font-weight: bold;
-            font-family: "VT323";
-            text-transform: uppercase;
+        .highlight div {
+            padding: 1rem 1rem 1rem 1rem;
         }
     }
-    a {
-        color: white;
-        text-decoration: none;
-    }
-    a.btn {
-        font-size: 1.3rem;
-    }
-    .btn-group {
-        font-size: 1.3rem;
-        margin-bottom: 1rem;
-    }
-    .btn-group a.dropdown-item {
-        font-size: 1.3rem;
-        color: #901A1E;
-    }
-    ul {
-        list-style: none;
-        padding-left: 1rem;
-    }
-    .copyright {
-        bottom: 0;
-        position: absolute;
-        font-size: 1rem;
-    }
 }
-
-#sidebar {
-    position: fixed;
-    height: 100vh;
-    min-width: 25rem;
-    max-width: 25rem;
-    background-color: #901A1E;
-    padding: 1rem 2rem;
-}
-
-// @media (max-height: 588px) @or (max-width: 1198px) {
-//     #sidebar {
-//         display: block;
-//     }
-//     .content-container {
-//         padding-left: 25rem;
-//     }
-
-//     .content-container .content {
-//         padding: 2rem 3rem 3rem 5rem;
-//         width: 65vw;
-//     }
-// }
 
 @media (min-height: 588px) and (min-width: 1198px) {
-    #sidebar {
-        display: block;
-    }
     .content-container {
         padding-left: 25rem;
     }
-
-    .content-container .content {
-        padding: 2rem 3rem 3rem 5rem;
-        width: 65vw;
-    }
 }
 
-
-.content {
-    overflow: auto;
+@media (min-height: 588px) and (min-width: 1198px) {
     .highlight {
-        width: 45vw;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 1rem;
+        width: 80%;
     }
-    .highlight div {
-        padding: 1rem 1rem 1rem 1rem;
+    .content-container {
+        .content {
+            width: calc(100vw - 28rem);
+            max-width: 30cm;
+        }
     }
 }
 
+.transparent {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    font-weight: 100;
+
+}

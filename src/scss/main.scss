@@ -1,9 +1,10 @@
 // Custom style
-@import "custom";
 @import "fonts";
 @import "navbar";
+@import "custom";
 @import "ipynb";
 @import "code";
+@import "mathjax";
 
 // set font-awesome path
 $fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
