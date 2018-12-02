@@ -10,7 +10,7 @@
     },
     "scripts": {
         "build": "npm run webpack; npm run hugo",
-        "hugo": "hugo --source=exampleSite --themesDir=../..",
+        "hugo": "hugo --source=exampleSite --themesDir=../.. --ignoreCache",
         "hugo-serve": "hugo serve --source=exampleSite --themesDir=../..",
         "netlify": "ln -s ${PWD} ../NumEconCopenhagenTheme; npm install; npm run build",
         "webpack": "webpack",
